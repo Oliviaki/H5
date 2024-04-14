@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 13px;
+            left: 14px;
+            width: 100px;
+            height: 100px;
+            cursor: none;
+        }
+
+        div img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div><img src="./天使.gif" alt=""></div>
+</body>
+<script>
+    let div = document.querySelector('div');
+    console.dir(div)
+    function fun(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        div.style.top = y + 'px';
+        div.style.left = x + 'px';
+        // div.style.top = y -50 + 'px';
+        // div.style.left = x -50 + 'px';
+        // div.style.marginTop = -50 + 'px';
+        // div.style.marginLeft = -50 + 'px';
+        div.style.translate = '-50% -50%';
+    }
+    document.addEventListener('mousemove', fun)
+</script>
+
+</html>
